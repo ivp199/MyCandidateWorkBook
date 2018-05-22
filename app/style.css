@@ -1,0 +1,75 @@
+.appComponent {
+
+}
+
+.headerBar {
+    padding: 10px;
+    background: #ccc;
+}
+
+.headerTitle {
+    font-size: 24px;
+}
+
+.headerCounts {
+    margin-left: 45%;
+}
+
+.candidates {
+    padding: 10px 30px;
+}
+
+.candidate {
+    border: 1px solid #eee;
+    padding: 10px 20px;
+    margin: 10px;
+    box-shadow: 1px 1px #aaa;
+}
+
+.candidate .btn {
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+.candidate-tech {
+    margin-right: 20px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 33%;
+}
+
+.searchBar {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.searchBar .glyphicon-plus {
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 10px;
+    background: #aaa;
+    color: white;
+}
+
+input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0
+}
+.fullWidth {
+    width: 100%;
+}
+
+input:focus {
+    outline-color: white;
+ }
+
+ .dislayBlock {
+     display: block;
+ }
+
+ .displayNone {
+     display: none;
+ }

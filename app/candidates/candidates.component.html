@@ -1,0 +1,66 @@
+<div class="candidates">
+    <div class="searchBar">
+        <input [value]="" placeholder="Search Candidate" (input)="filterNames($event.target.value)" />&nbsp;&nbsp;
+        <button class="btn btn-default" (click)="showConfirm()">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+    </div>
+    <div class="row">
+        <div *ngFor='let candidate of candidates' class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="candidate">
+                <h3>{{candidate.name}} ({{candidate.gender}})</h3>
+                <h5>{{candidate.city}}</h5>
+                <h5>
+                    <strong>Status: {{candidate.status}}</strong>
+                </h5>
+                <br />
+                <div>
+                    <span *ngFor='let tech of candidate.technologies' class="candidate-tech">{{tech}}</span>
+                </div>
+                <br />
+                <button class="btn btn-primary" (click)='selectCandidate(candidate.id)'>
+                    Select
+                </button>
+                <button class="btn btn-danger" (click)='rejectCandidate(candidate.id)'>
+                    Reject
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div [ngClass]="{'modal fade in dislayBlock' : showPopUp, 'displayNone': !showPopUp}" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Add Candidate</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Candidate Name</h4>
+                <input [value]="" class='fullWidth' (input)="newName = $event.target.value" />
+                <br /><br />
+                
+                <h4>City</h4>
+                <input [value]="" class='fullWidth' (input)="newCity = $event.target.value" />
+                <br /><br />
+
+                <h4>Gender</h4>
+                <input type="radio" value="Male" name="gender" [ngModel]="newGender" > Male &nbsp;&nbsp;&nbsp;
+                <input type="radio" value="Female" name="gender" [ngModel]="newGender" > Female
+                <br /><br />
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" (click)="closePopUp()">Close</button>
+                <button type="button" class="btn btn-primary" (click)="saveNewCandidate()">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
